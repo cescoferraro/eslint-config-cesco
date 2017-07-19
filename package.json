@@ -1,9 +1,9 @@
 {
-  "name": "eslint-config-google",
-  "version": "0.9.1",
+  "name": "eslint-config-cesco",
+  "version": "0.0.1",
   "description": "ESLint shareable config for the Google style",
   "license": "Apache-2.0",
-  "repository": "google/eslint-config-google",
+  "repository": "cescoferraro/eslint-config-cesco",
   "author": "Google",
   "engines": {
     "node": ">=0.10.0"
