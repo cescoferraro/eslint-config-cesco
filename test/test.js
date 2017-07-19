@@ -27,7 +27,6 @@ const repoFiles = ['index.js', 'test/test.js'];
 
 // Runs the linter on the repo files and asserts no errors were found.
 const report = new eslint.CLIEngine(conf).executeOnFiles(repoFiles);
-console.log(report);
 assert.equal(report.errorCount, 0);
 assert.equal(report.warningCount, 0);
 repoFiles.forEach((file, index) => {
