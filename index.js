@@ -70,7 +70,7 @@ module.exports = {
     // 'class-methods-use-this': 0,
     // 'complexity': 0,
     // 'consistent-return': 0
-    'curly': [2, 'multi-line'], // TODO(philipwalton): add an option to enforce
+    curly: [2, 'multi-line'], // TODO(philipwalton): add an option to enforce
     // braces with the exception of simple,
     // single-line if statements.
     // 'default-case': 0,
@@ -179,7 +179,7 @@ module.exports = {
     'array-element-newline': 0, // eslint:recommended
     'block-spacing': [2, 'never'],
     'brace-style': 2,
-    'camelcase': [2, { properties: 'never' }],
+    camelcase: [2, { properties: 'never' }],
     // 'capitalized-comments': 0,
     'comma-dangle': ['error', 'never'],
     'comma-spacing': 2,
@@ -259,8 +259,13 @@ module.exports = {
     // 'operator-linebreak': 0,
     'padded-blocks': [2, 'never'],
     // 'padding-line-between-statements': 0,
-    'quote-props': [2, 'consistent'],
-    'quotes': [2, 'single', { allowTemplateLiterals: true }],
+
+    'quote-props': ['error', 'as-needed'],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: true }
+    ],
     'require-jsdoc': [
       2,
       {
@@ -271,7 +276,7 @@ module.exports = {
         }
       }
     ],
-    'semi': 2,
+    semi: 2,
     'semi-spacing': 2,
     // 'semi-style': 0,
     // 'sort-keys': 0,
