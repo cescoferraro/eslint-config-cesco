@@ -259,8 +259,13 @@ module.exports = {
     // 'operator-linebreak': 0,
     'padded-blocks': [2, 'never'],
     // 'padding-line-between-statements': 0,
-    'quote-props': [2, 'consistent'],
-    quotes: [2, 'single', { allowTemplateLiterals: true }],
+
+    'quote-props': ['error', 'as-needed'],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: true }
+    ],
     'require-jsdoc': [
       2,
       {
