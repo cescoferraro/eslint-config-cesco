@@ -17,6 +17,9 @@
 'use strict';
 
 module.exports = {
+  parserOptions: { ecmaVersion: 6 },
+  plugins: ['prettier'],
+  extends: ['prettier'],
   rules: {
     // The rules below are listed in the order they appear on the eslint
     // rules page. All rules are listed to make it easier to keep in sync
@@ -62,14 +65,16 @@ module.exports = {
     // 'no-unsafe-finally': 2, // eslint:recommended
     // 'no-unsafe-negation': 0,
     // 'use-isnan': 2 // eslint:recommended
-    'valid-jsdoc': [2, {
-      requireParamDescription: false,
-      requireReturnDescription: false,
-      requireReturn: false,
-      prefer: {returns: 'return'},
-    }],
+    'valid-jsdoc': [
+      2,
+      {
+        requireParamDescription: false,
+        requireReturnDescription: false,
+        requireReturn: false,
+        prefer: { returns: 'return' }
+      }
+    ],
     // 'valid-typeof': 2 // eslint:recommended
-
 
     // Best Practices
     // http://eslint.org/docs/rules/#best-practices
@@ -82,8 +87,8 @@ module.exports = {
     // 'complexity': 0,
     // 'consistent-return': 0
     'curly': [2, 'multi-line'], // TODO(philipwalton): add an option to enforce
-                                // braces with the exception of simple,
-                                // single-line if statements.
+    // braces with the exception of simple,
+    // single-line if statements.
     // 'default-case': 0,
     // 'dot-location': 0,
     // 'dot-notation': 0,
@@ -164,7 +169,7 @@ module.exports = {
     // 'no-undef': 2, // eslint:recommended
     // 'no-undef-init': 0,
     // 'no-undefined': 0,
-    'no-unused-vars': [2, {args: 'none'}], // eslint:recommended
+    'no-unused-vars': [2, { args: 'none' }], // eslint:recommended
     // 'no-use-before-define': 0,
 
     // Node.js and CommonJS
@@ -190,9 +195,9 @@ module.exports = {
     'array-element-newline': 0, // eslint:recommended
     'block-spacing': [2, 'never'],
     'brace-style': 2,
-    'camelcase': [2, {properties: 'never'}],
+    'camelcase': [2, { properties: 'never' }],
     // 'capitalized-comments': 0,
-    'comma-dangle': [2, 'always-multiline'],
+    'comma-dangle': ['error', 'never'],
     'comma-spacing': 2,
     'comma-style': 2,
     'computed-property-spacing': 2,
@@ -206,7 +211,7 @@ module.exports = {
     // 'id-length': 0,
     // 'id-match': 0,
     // 'indent': 0, // TODO(philipwalton): this rule isn't compatible with
-                    // Google's 4-space indent for line continuations.
+    // Google's 4-space indent for line continuations.
     // 'jsx-quotes': 0,
     'key-spacing': 2,
     'keyword-spacing': 2,
@@ -214,19 +219,22 @@ module.exports = {
     'linebreak-style': 2,
     // 'lines-around-comment': 0,
     // 'max-depth': 0,
-    'max-len': [2, {
-      code: 80,
-      tabWidth: 2,
-      ignoreUrls: true,
-      ignorePattern: '^goog\.(module|require)',
-    }],
+    'max-len': [
+      2,
+      {
+        code: 80,
+        tabWidth: 2,
+        ignoreUrls: true,
+        ignorePattern: '^goog.(module|require)'
+      }
+    ],
     // 'max-lines': 0,
     // 'max-nested-callbacks': 0,
     // 'max-params': 0,
     // 'max-statements': 0,
     // 'max-statements-per-line': 0,
     // 'multiline-ternary': 0, // TODO(philipwalton): add a rule to enforce the
-                               // operator appearing at the end of the line.
+    // operator appearing at the end of the line.
     'new-cap': 2,
     // 'new-parens': 0,
     // 'newline-per-chained-call': 0,
@@ -238,7 +246,7 @@ module.exports = {
     // 'no-mixed-operators': 0,
     'no-mixed-spaces-and-tabs': 2, // eslint:recommended
     // 'no-multi-assign': 0,
-    'no-multiple-empty-lines': [2, {max: 2}],
+    'no-multiple-empty-lines': [2, { max: 2 }],
     // 'no-negated-condition': 0,
     // 'no-nested-ternary': 0,
     'no-new-object': 2,
@@ -252,43 +260,52 @@ module.exports = {
     // 'no-whitespace-before-property': 0,
     // 'nonblock-statement-body-position': 0,
     // 'object-curly-newline': 0,
-    'object-curly-spacing': 2,
+    'object-curly-spacing': ['error', 'always'],
     // 'object-property-newline': 0,
-    'one-var': [2, {
-      var: 'never',
-      let: 'never',
-      const: 'never',
-    }],
+    'one-var': [
+      2,
+      {
+        var: 'never',
+        let: 'never',
+        const: 'never'
+      }
+    ],
     // 'one-var-declaration-per-line': 0,
     // 'operator-assignment': 0,
     // 'operator-linebreak': 0,
     'padded-blocks': [2, 'never'],
     // 'padding-line-between-statements': 0,
     'quote-props': [2, 'consistent'],
-    'quotes': [2, 'single', {allowTemplateLiterals: true}],
-    'require-jsdoc': [2, {
-      require: {
-        FunctionDeclaration: true,
-        MethodDefinition: true,
-        ClassDeclaration: true,
-      },
-    }],
+    'quotes': [2, 'single', { allowTemplateLiterals: true }],
+    'require-jsdoc': [
+      2,
+      {
+        require: {
+          FunctionDeclaration: true,
+          MethodDefinition: true,
+          ClassDeclaration: true
+        }
+      }
+    ],
     'semi': 2,
     'semi-spacing': 2,
     // 'semi-style': 0,
     // 'sort-keys': 0,
     // 'sort-vars': 0,
     'space-before-blocks': 2,
-    'space-before-function-paren': [2, {
-      asyncArrow: 'always',
-      anonymous: 'never',
-      named: 'never',
-    }],
+    'space-before-function-paren': [
+      2,
+      {
+        asyncArrow: 'always',
+        anonymous: 'never',
+        named: 'never'
+      }
+    ],
     // 'space-in-parens': 0,
     // 'space-infix-ops': 0,
     // 'space-unary-ops': 0,
     'spaced-comment': [2, 'always'],
-    'switch-colon-spacing': 2,
+    'switch-colon-spacing': 'off',
     // 'template-tag-spacing': 0,
     // 'unicode-bom': 0,
     // 'wrap-regex': 0,
@@ -297,10 +314,10 @@ module.exports = {
     // http://eslint.org/docs/rules/#ecmascript-6
     // ------------------------------------------
     // 'arrow-body-style': 0,
-    'arrow-parens': [2, 'always'], // TODO(philipwalton): technically arrow
-                                   // parens are optional but recommended.
-                                   // ESLint doesn't support a *consistent*
-                                   // setting so "always" is used.
+    'arrow-parens': ['error', 'as-needed'],
+    // parens are optional but recommended.
+    // ESLint doesn't support a *consistent*
+    // setting so "always" is used.
     // 'arrow-spacing': 0,
     'constructor-super': 2, // eslint:recommended
     'generator-star-spacing': [2, 'after'],
@@ -329,6 +346,6 @@ module.exports = {
     // 'sort-imports': 0,
     // 'symbol-description': 0,
     // 'template-curly-spacing': 0,
-    'yield-star-spacing': [2, 'after'],
-  },
+    'yield-star-spacing': [2, 'after']
+  }
 };
